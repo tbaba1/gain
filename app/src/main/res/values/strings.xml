@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Android App</string>
+    <string name="counter_label">Counter</string>
+    <string name="increment">+1</string>
+    <string name="decrement">-1</string>
+    <string name="reset">Reset</string>
+    <string name="fab_description">Info button</string>
+    <string name="app_description">A simple counter app built with modern Android development practices. Tap the buttons to increment, decrement, or reset the counter. The app follows Material Design 3 guidelines and uses MVVM architecture.</string>
+</resources>
