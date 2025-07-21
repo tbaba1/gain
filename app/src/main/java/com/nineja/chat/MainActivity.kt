@@ -1,4 +1,4 @@
-package com.nineja.chat
+package com.naijachat.naija_chat
 
 import android.Manifest
 import android.content.Intent
@@ -11,22 +11,18 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.snackbar.Snackbar
-import com.nineja.chat.databinding.ActivityMainBinding
-import com.nineja.chat.ui.camera.CameraActivity
-import com.nineja.chat.utils.PermissionUtils
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.naijachat.naija_chat.databinding.ActivityMainBinding
+import com.naijachat.naija_chat.ui.camera.CameraActivity
+import com.naijachat.naija_chat.utils.PermissionUtils
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-    
-    private val requiredPermissions = arrayOf(
-        Manifest.permission.CAMERA,
-        Manifest.permission.RECORD_AUDIO,
-        Manifest.permission.READ_EXTERNAL_STORAGE
-    )
-    
+
     private val permissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
@@ -37,31 +33,31 @@ class MainActivity : AppCompatActivity() {
             showPermissionDeniedMessage()
         }
     }
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
         setupNavigation()
         setupBottomNavigation()
     }
-    
+
     private fun setupNavigation() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
     }
-    
+
     private fun setupBottomNavigation() {
         binding.bottomNavigation.setupWithNavController(navController)
-        
-        // Handle camera tab click separately
+
+        // Handle camera button separately
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_camera -> {
                     checkPermissionsAndOpenCamera()
-                    false // Don't navigate normally
+                    false // Don't let navigation handle this
                 }
                 else -> {
                     navController.navigate(item.itemId)
@@ -69,97 +65,74 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        
-        // Show/hide bottom navigation based on current destination
+
+        // Show/hide bottom navigation based on destination
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.homeFragment,
-                R.id.discoverFragment,
-                R.id.inboxFragment,
-                R.id.profileFragment -> {
-                    showBottomNavigation()
-                }
-                else -> {
-                    hideBottomNavigation()
-                }
+                R.id.nav_camera -> hideBottomNavigation()
+                else -> showBottomNavigation()
             }
         }
     }
-    
+
     private fun checkPermissionsAndOpenCamera() {
-        val missingPermissions = requiredPermissions.filter {
-            ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
+        val requiredPermissions = arrayOf(
+            Manifest.permission.CAMERA,
+            Manifest.permission.RECORD_AUDIO
+        )
+
+        val missingPermissions = requiredPermissions.filter { permission ->
+            ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED
         }
-        
+
         if (missingPermissions.isEmpty()) {
             openCamera()
         } else {
-            if (missingPermissions.any { shouldShowRequestPermissionRationale(it) }) {
-                showPermissionRationale()
+            // Show rationale if needed
+            val shouldShowRationale = missingPermissions.any { permission ->
+                shouldShowRequestPermissionRationale(permission)
+            }
+
+            if (shouldShowRationale) {
+                showPermissionRationale(requiredPermissions)
             } else {
                 permissionLauncher.launch(requiredPermissions)
             }
         }
     }
-    
+
     private fun openCamera() {
         val intent = Intent(this, CameraActivity::class.java)
         startActivity(intent)
-        // Add custom transition animation
-        overridePendingTransition(R.anim.slide_up, R.anim.fade_out)
     }
-    
-    private fun showPermissionRationale() {
-        Snackbar.make(
-            binding.root,
-            "Camera and audio permissions are needed to record videos",
-            Snackbar.LENGTH_LONG
-        ).setAction("Allow") {
-            permissionLauncher.launch(requiredPermissions)
-        }.show()
+
+    private fun showPermissionRationale(permissions: Array<String>) {
+        MaterialAlertDialogBuilder(this)
+            .setTitle(getString(R.string.permission_camera_title))
+            .setMessage(getString(R.string.permission_camera_message))
+            .setPositiveButton(getString(R.string.grant_permission)) { _, _ ->
+                permissionLauncher.launch(permissions)
+            }
+            .setNegativeButton(getString(R.string.cancel), null)
+            .show()
     }
-    
+
     private fun showPermissionDeniedMessage() {
-        Snackbar.make(
-            binding.root,
-            "Permissions denied. Please enable them in settings to use camera.",
-            Snackbar.LENGTH_LONG
-        ).setAction("Settings") {
-            PermissionUtils.openAppSettings(this)
-        }.show()
+        MaterialAlertDialogBuilder(this)
+            .setTitle(getString(R.string.permission_denied))
+            .setMessage(getString(R.string.permission_camera_message))
+            .setPositiveButton(getString(R.string.go_to_settings)) { _, _ ->
+                PermissionUtils.openAppSettings(this)
+            }
+            .setNegativeButton(getString(R.string.cancel), null)
+            .show()
     }
-    
+
     private fun showBottomNavigation() {
-        binding.bottomNavigation.animate()
-            .translationY(0f)
-            .alpha(1f)
-            .setDuration(200)
-            .withStartAction {
-                binding.bottomNavigation.visibility = View.VISIBLE
-            }
-            .start()
+        binding.bottomNavigation.visibility = View.VISIBLE
     }
-    
+
     private fun hideBottomNavigation() {
-        binding.bottomNavigation.animate()
-            .translationY(binding.bottomNavigation.height.toFloat())
-            .alpha(0f)
-            .setDuration(200)
-            .withEndAction {
-                binding.bottomNavigation.visibility = View.GONE
-            }
-            .start()
-    }
-    
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
-    
-    fun selectTab(tabId: Int) {
-        binding.bottomNavigation.selectedItemId = tabId
-    }
-    
-    fun getCurrentTabId(): Int {
-        return binding.bottomNavigation.selectedItemId
+        binding.bottomNavigation.visibility = View.GONE
     }
 }

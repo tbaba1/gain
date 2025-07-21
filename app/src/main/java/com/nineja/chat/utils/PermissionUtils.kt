@@ -1,4 +1,4 @@
-package com.nineja.chat.utils
+package com.naijachat.naija_chat.utils
 
 import android.Manifest
 import android.app.Activity
@@ -9,251 +9,225 @@ import android.net.Uri
 import android.provider.Settings
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 
 object PermissionUtils {
-    
-    // Permission constants
-    const val CAMERA_PERMISSION_CODE = 100
-    const val AUDIO_PERMISSION_CODE = 101
-    const val STORAGE_PERMISSION_CODE = 102
-    const val ALL_PERMISSIONS_CODE = 103
-    
-    // Required permissions for video recording
+
+    // Permission request codes
+    const val REQUEST_CAMERA_PERMISSION = 100
+    const val REQUEST_AUDIO_PERMISSION = 101
+    const val REQUEST_STORAGE_PERMISSION = 102
+    const val REQUEST_ALL_PERMISSIONS = 103
+
+    // Permission arrays
     val CAMERA_PERMISSIONS = arrayOf(
         Manifest.permission.CAMERA,
         Manifest.permission.RECORD_AUDIO
     )
-    
+
     val STORAGE_PERMISSIONS = arrayOf(
         Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.WRITE_EXTERNAL_STORAGE
     )
-    
-    val ALL_PERMISSIONS = arrayOf(
+
+    val ALL_REQUIRED_PERMISSIONS = arrayOf(
         Manifest.permission.CAMERA,
         Manifest.permission.RECORD_AUDIO,
         Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_MEDIA_IMAGES,
+        Manifest.permission.READ_MEDIA_VIDEO,
+        Manifest.permission.ACCESS_NETWORK_STATE,
+        Manifest.permission.VIBRATE
     )
-    
+
     /**
-     * Check if camera permission is granted
+     * Check if a single permission is granted
      */
-    fun hasCameraPermission(context: Context): Boolean {
-        return ContextCompat.checkSelfPermission(
-            context,
-            Manifest.permission.CAMERA
-        ) == PackageManager.PERMISSION_GRANTED
+    fun isPermissionGranted(context: Context, permission: String): Boolean {
+        return ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED
     }
-    
+
     /**
-     * Check if audio recording permission is granted
+     * Check if all permissions in an array are granted
      */
-    fun hasAudioPermission(context: Context): Boolean {
-        return ContextCompat.checkSelfPermission(
-            context,
-            Manifest.permission.RECORD_AUDIO
-        ) == PackageManager.PERMISSION_GRANTED
-    }
-    
-    /**
-     * Check if storage permissions are granted
-     */
-    fun hasStoragePermission(context: Context): Boolean {
-        return ContextCompat.checkSelfPermission(
-            context,
-            Manifest.permission.READ_EXTERNAL_STORAGE
-        ) == PackageManager.PERMISSION_GRANTED
-    }
-    
-    /**
-     * Check if all required permissions are granted
-     */
-    fun hasAllPermissions(context: Context): Boolean {
-        return ALL_PERMISSIONS.all { permission ->
-            ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED
+    fun arePermissionsGranted(context: Context, permissions: Array<String>): Boolean {
+        return permissions.all { permission ->
+            isPermissionGranted(context, permission)
         }
     }
-    
+
     /**
-     * Check if camera and audio permissions are granted (minimum for recording)
+     * Check camera permissions
      */
-    fun hasCameraAndAudioPermissions(context: Context): Boolean {
-        return CAMERA_PERMISSIONS.all { permission ->
-            ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED
-        }
+    fun hasCameraPermissions(context: Context): Boolean {
+        return arePermissionsGranted(context, CAMERA_PERMISSIONS)
     }
-    
+
     /**
-     * Get list of missing permissions
+     * Check storage permissions
      */
-    fun getMissingPermissions(context: Context, permissions: Array<String>): List<String> {
-        return permissions.filter { permission ->
-            ContextCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED
-        }
+    fun hasStoragePermissions(context: Context): Boolean {
+        return arePermissionsGranted(context, STORAGE_PERMISSIONS)
     }
-    
+
     /**
-     * Request camera permission from Activity
+     * Check all required permissions
      */
-    fun requestCameraPermission(activity: Activity) {
-        ActivityCompat.requestPermissions(
-            activity,
-            arrayOf(Manifest.permission.CAMERA),
-            CAMERA_PERMISSION_CODE
-        )
+    fun hasAllRequiredPermissions(context: Context): Boolean {
+        return arePermissionsGranted(context, ALL_REQUIRED_PERMISSIONS)
     }
-    
+
     /**
-     * Request audio permission from Activity
+     * Request a single permission
      */
-    fun requestAudioPermission(activity: Activity) {
-        ActivityCompat.requestPermissions(
-            activity,
-            arrayOf(Manifest.permission.RECORD_AUDIO),
-            AUDIO_PERMISSION_CODE
-        )
+    fun requestPermission(activity: Activity, permission: String, requestCode: Int) {
+        ActivityCompat.requestPermissions(activity, arrayOf(permission), requestCode)
     }
-    
+
     /**
-     * Request storage permissions from Activity
+     * Request multiple permissions
+     */
+    fun requestPermissions(activity: Activity, permissions: Array<String>, requestCode: Int) {
+        ActivityCompat.requestPermissions(activity, permissions, requestCode)
+    }
+
+    /**
+     * Request camera permissions
+     */
+    fun requestCameraPermissions(activity: Activity) {
+        requestPermissions(activity, CAMERA_PERMISSIONS, REQUEST_CAMERA_PERMISSION)
+    }
+
+    /**
+     * Request storage permissions
      */
     fun requestStoragePermissions(activity: Activity) {
-        ActivityCompat.requestPermissions(
-            activity,
-            STORAGE_PERMISSIONS,
-            STORAGE_PERMISSION_CODE
-        )
+        requestPermissions(activity, STORAGE_PERMISSIONS, REQUEST_STORAGE_PERMISSION)
     }
-    
+
     /**
-     * Request all permissions from Activity
+     * Request all required permissions
      */
     fun requestAllPermissions(activity: Activity) {
-        ActivityCompat.requestPermissions(
-            activity,
-            ALL_PERMISSIONS,
-            ALL_PERMISSIONS_CODE
-        )
+        requestPermissions(activity, ALL_REQUIRED_PERMISSIONS, REQUEST_ALL_PERMISSIONS)
     }
-    
+
     /**
-     * Request camera and audio permissions from Activity
+     * Check if we should show rationale for a permission
      */
-    fun requestCameraAndAudioPermissions(activity: Activity) {
-        ActivityCompat.requestPermissions(
-            activity,
-            CAMERA_PERMISSIONS,
-            CAMERA_PERMISSION_CODE
-        )
-    }
-    
-    /**
-     * Request camera permission from Fragment
-     */
-    fun requestCameraPermission(fragment: Fragment) {
-        fragment.requestPermissions(
-            arrayOf(Manifest.permission.CAMERA),
-            CAMERA_PERMISSION_CODE
-        )
-    }
-    
-    /**
-     * Request audio permission from Fragment
-     */
-    fun requestAudioPermission(fragment: Fragment) {
-        fragment.requestPermissions(
-            arrayOf(Manifest.permission.RECORD_AUDIO),
-            AUDIO_PERMISSION_CODE
-        )
-    }
-    
-    /**
-     * Request all permissions from Fragment
-     */
-    fun requestAllPermissions(fragment: Fragment) {
-        fragment.requestPermissions(
-            ALL_PERMISSIONS,
-            ALL_PERMISSIONS_CODE
-        )
-    }
-    
-    /**
-     * Check if we should show permission rationale
-     */
-    fun shouldShowPermissionRationale(activity: Activity, permission: String): Boolean {
+    fun shouldShowRationale(activity: Activity, permission: String): Boolean {
         return ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)
     }
-    
+
     /**
-     * Check if we should show permission rationale for any of the permissions
+     * Check if we should show rationale for any of the permissions
      */
-    fun shouldShowPermissionRationale(activity: Activity, permissions: Array<String>): Boolean {
+    fun shouldShowRationale(activity: Activity, permissions: Array<String>): Boolean {
         return permissions.any { permission ->
-            ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)
+            shouldShowRationale(activity, permission)
         }
     }
-    
+
     /**
-     * Open app settings for manual permission grant
-     */
-    fun openAppSettings(context: Context) {
-        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
-            data = Uri.fromParts("package", context.packageName, null)
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        }
-        context.startActivity(intent)
-    }
-    
-    /**
-     * Handle permission request result
+     * Handle permission result
      */
     fun handlePermissionResult(
         requestCode: Int,
         permissions: Array<out String>,
         grantResults: IntArray,
         onGranted: () -> Unit,
-        onDenied: () -> Unit,
-        onShowRationale: () -> Unit = {}
+        onDenied: (deniedPermissions: List<String>) -> Unit
     ) {
-        when (requestCode) {
-            CAMERA_PERMISSION_CODE,
-            AUDIO_PERMISSION_CODE,
-            STORAGE_PERMISSION_CODE,
-            ALL_PERMISSIONS_CODE -> {
-                if (grantResults.isNotEmpty() && grantResults.all { it == PackageManager.PERMISSION_GRANTED }) {
-                    onGranted()
-                } else {
-                    onDenied()
+        if (grantResults.isNotEmpty()) {
+            val deniedPermissions = mutableListOf<String>()
+            
+            for (i in permissions.indices) {
+                if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                    deniedPermissions.add(permissions[i])
                 }
             }
+            
+            if (deniedPermissions.isEmpty()) {
+                onGranted()
+            } else {
+                onDenied(deniedPermissions)
+            }
+        } else {
+            onDenied(permissions.toList())
         }
     }
-    
+
     /**
-     * Get permission name for display
+     * Get missing permissions from a list of required permissions
+     */
+    fun getMissingPermissions(context: Context, requiredPermissions: Array<String>): List<String> {
+        return requiredPermissions.filter { permission ->
+            !isPermissionGranted(context, permission)
+        }
+    }
+
+    /**
+     * Open app settings to allow user to grant permissions manually
+     */
+    fun openAppSettings(context: Context) {
+        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+            data = Uri.fromParts("package", context.packageName, null)
+        }
+        context.startActivity(intent)
+    }
+
+    /**
+     * Get human-readable permission name
      */
     fun getPermissionName(permission: String): String {
         return when (permission) {
             Manifest.permission.CAMERA -> "Camera"
             Manifest.permission.RECORD_AUDIO -> "Microphone"
-            Manifest.permission.READ_EXTERNAL_STORAGE -> "Storage"
-            Manifest.permission.WRITE_EXTERNAL_STORAGE -> "Storage"
-            else -> "Unknown"
+            Manifest.permission.READ_EXTERNAL_STORAGE -> "Storage Read"
+            Manifest.permission.WRITE_EXTERNAL_STORAGE -> "Storage Write"
+            Manifest.permission.READ_MEDIA_IMAGES -> "Media Images"
+            Manifest.permission.READ_MEDIA_VIDEO -> "Media Videos"
+            Manifest.permission.ACCESS_NETWORK_STATE -> "Network State"
+            Manifest.permission.VIBRATE -> "Vibrate"
+            else -> permission.substringAfterLast(".")
         }
     }
-    
+
     /**
-     * Get permission description for rationale
+     * Get permission rationale message
      */
-    fun getPermissionDescription(permission: String): String {
+    fun getPermissionRationale(permission: String): String {
         return when (permission) {
-            Manifest.permission.CAMERA -> "Camera access is needed to record videos"
-            Manifest.permission.RECORD_AUDIO -> "Microphone access is needed to record audio"
-            Manifest.permission.READ_EXTERNAL_STORAGE -> "Storage access is needed to save and access media files"
-            Manifest.permission.WRITE_EXTERNAL_STORAGE -> "Storage access is needed to save videos and photos"
+            Manifest.permission.CAMERA -> 
+                "Camera permission is needed to record videos and take photos"
+            Manifest.permission.RECORD_AUDIO -> 
+                "Microphone permission is needed to record audio for your videos"
+            Manifest.permission.READ_EXTERNAL_STORAGE -> 
+                "Storage permission is needed to access your photos and videos"
+            Manifest.permission.WRITE_EXTERNAL_STORAGE -> 
+                "Storage permission is needed to save your videos and photos"
+            Manifest.permission.READ_MEDIA_IMAGES -> 
+                "Permission is needed to access your images for video creation"
+            Manifest.permission.READ_MEDIA_VIDEO -> 
+                "Permission is needed to access your videos"
             else -> "This permission is required for the app to function properly"
+        }
+    }
+
+    /**
+     * Check if permission is permanently denied
+     */
+    fun isPermissionPermanentlyDenied(activity: Activity, permission: String): Boolean {
+        return !isPermissionGranted(activity, permission) && 
+               !shouldShowRationale(activity, permission)
+    }
+
+    /**
+     * Get permanently denied permissions
+     */
+    fun getPermanentlyDeniedPermissions(activity: Activity, permissions: Array<String>): List<String> {
+        return permissions.filter { permission ->
+            isPermissionPermanentlyDenied(activity, permission)
         }
     }
 }
