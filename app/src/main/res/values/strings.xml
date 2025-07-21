@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Information -->
+    <string name="app_name">NaijaChat</string>
+    <string name="app_description">Nigeria\'s Premier Social Video Platform</string>
+    <string name="app_tagline">Connecting Naija through creativity and culture</string>
+
+    <!-- Navigation -->
+    <string name="navigation_home">Home</string>
+    <string name="navigation_discover">Discover</string>
+    <string name="navigation_camera">Camera</string>
+    <string name="navigation_inbox">Inbox</string>
+    <string name="navigation_profile">Profile</string>
+
+    <!-- Video Feed -->
+    <string name="for_you">For You</string>
+    <string name="following">Following</string>
+    <string name="trending">Trending</string>
+    <string name="live">Live</string>
+    <string name="trending_naija">Trending in Naija 🇳🇬</string>
+    
+    <!-- Video Interactions -->
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
+    <string name="share">Share</string>
+    <string name="follow">Follow</string>
+    <string name="following_status">Following</string>
+    <string name="save">Save</string>
+    <string name="report">Report</string>
+    <string name="not_interested">Not Interested</string>
+    
+    <!-- Camera & Recording -->
+    <string name="record">Record</string>
+    <string name="record_video">Record Video</string>
+    <string name="stop_recording">Stop Recording</string>
+    <string name="switch_camera">Switch Camera</string>
+    <string name="flash_on">Flash On</string>
+    <string name="flash_off">Flash Off</string>
+    <string name="timer">Timer</string>
+    <string name="effects">Effects</string>
+    <string name="filters">Filters</string>
+    <string name="speed">Speed</string>
+    <string name="beauty">Beauty</string>
+    
+    <!-- Video Editor -->
+    <string name="next">Next</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="save_draft">Save Draft</string>
+    <string name="discard">Discard</string>
+    <string name="post">Post</string>
+    <string name="add_sound">Add Sound</string>
+    <string name="trim_video">Trim Video</string>
+    <string name="adjust_clip">Adjust Clip</string>
+    
+    <!-- Video Description -->
+    <string name="describe_video">Describe your video…</string>
+    <string name="add_hashtags">Add hashtags to reach more people</string>
+    <string name="mention_friends">Mention friends</string>
+    <string name="add_location">Add location</string>
+    <string name="who_can_see">Who can see this video</string>
+    <string name="public">Public</string>
+    <string name="friends">Friends</string>
+    <string name="private_video">Private</string>
+    
+    <!-- Comments -->
+    <string name="add_comment">Add a comment…</string>
+    <string name="reply">Reply</string>
+    <string name="replies">Replies</string>
+    <string name="view_replies">View %d replies</string>
+    <string name="hide_replies">Hide replies</string>
+    <string name="pin_comment">Pin comment</string>
+    <string name="delete_comment">Delete comment</string>
+    <string name="report_comment">Report comment</string>
+    <string name="heart_comment">❤</string>
+    
+    <!-- Profile -->
+    <string name="edit_profile">Edit profile</string>
+    <string name="add_bio">Add bio</string>
+    <string name="bio_hint">Tell people a little about yourself</string>
+    <string name="change_photo">Change photo</string>
+    <string name="followers">Followers</string>
+    <string name="following_count">Following</string>
+    <string name="likes_count">Likes</string>
+    <string name="videos_count">Videos</string>
+    <string name="creator_fund">Creator Fund</string>
+    <string name="earnings">Earnings</string>
+    <string name="analytics">Analytics</string>
+    <string name="insights">Insights</string>
+    
+    <!-- Discover -->
+    <string name="search">Search</string>
+    <string name="search_hint">Search videos, users, sounds…</string>
+    <string name="hashtags">Hashtags</string>
+    <string name="sounds">Sounds</string>
+    <string name="users">Users</string>
+    <string name="no_results">No results found</string>
+    <string name="trending_hashtags">Trending hashtags</string>
+    <string name="popular_sounds">Popular sounds</string>
+    <string name="suggested_users">Suggested for you</string>
+    
+    <!-- Inbox & Messages -->
+    <string name="messages">Messages</string>
+    <string name="notifications">Notifications</string>
+    <string name="all_activity">All activity</string>
+    <string name="likes_activity">Likes</string>
+    <string name="comments_activity">Comments</string>
+    <string name="followers_activity">Followers</string>
+    <string name="mentions_activity">Mentions</string>
+    <string name="send_message">Send message</string>
+    <string name="type_message">Type a message…</string>
+    <string name="new_message">New message</string>
+    
+    <!-- Permissions -->
+    <string name="permission_camera_title">Camera Permission</string>
+    <string name="permission_camera_message">We need camera access to record videos</string>
+    <string name="permission_microphone_title">Microphone Permission</string>
+    <string name="permission_microphone_message">We need microphone access to record audio</string>
+    <string name="permission_storage_title">Storage Permission</string>
+    <string name="permission_storage_message">We need storage access to save your videos</string>
+    <string name="permission_location_title">Location Permission</string>
+    <string name="permission_location_message">We need location access to add location to your videos</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="permission_required">Permission required</string>
+    
+    <!-- General Actions -->
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="retry">Retry</string>
+    <string name="refresh">Refresh</string>
+    <string name="loading">Loading…</string>
+    <string name="load_more">Load more</string>
+    <string name="see_all">See all</string>
+    <string name="show_less">Show less</string>
+    <string name="copy">Copy</string>
+    <string name="copied">Copied</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="settings">Settings</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="feedback">Feedback</string>
+    <string name="logout">Logout</string>
+    
+    <!-- Error Messages -->
+    <string name="error_network">No internet connection</string>
+    <string name="error_server">Server error, please try again</string>
+    <string name="error_upload">Upload failed</string>
+    <string name="error_loading">Failed to load content</string>
+    <string name="error_generic">Something went wrong</string>
+    <string name="error_permission">Permission not granted</string>
+    <string name="error_camera">Camera error</string>
+    <string name="error_storage_full">Storage is full</string>
+    <string name="error_file_not_found">File not found</string>
+    <string name="network_error">Check your internet connection and try again</string>
+    
+    <!-- Time Formats -->
+    <string name="just_now">Just now</string>
+    <string name="minutes_ago">%dm ago</string>
+    <string name="hours_ago">%dh ago</string>
+    <string name="days_ago">%dd ago</string>
+    <string name="weeks_ago">%dw ago</string>
+    <string name="months_ago">%dmo ago</string>
+    <string name="years_ago">%dy ago</string>
+    
+    <!-- Number Formats -->
+    <string name="thousand_format">%dK</string>
+    <string name="million_format">%.1fM</string>
+    <string name="billion_format">%.1fB</string>
+    
+    <!-- Sharing -->
+    <string name="share_to">Share to…</string>
+    <string name="copy_link">Copy link</string>
+    <string name="save_video">Save video</string>
+    <string name="share_whatsapp">Share to WhatsApp</string>
+    <string name="share_instagram">Share to Instagram</string>
+    <string name="share_twitter">Share to Twitter</string>
+    <string name="share_facebook">Share to Facebook</string>
+    <string name="more_options">More options</string>
+    
+    <!-- Nigerian Cultural Terms -->
+    <string name="naija">Naija</string>
+    <string name="afrobeats">Afrobeats</string>
+    <string name="nollywood">Nollywood</string>
+    <string name="jollof">Jollof</string>
+    <string name="owanbe">Owambe</string>
+    <string name="gele">Gele</string>
+    <string name="agbada">Agbada</string>
+    <string name="suya">Suya</string>
+    <string name="buka">Buka</string>
+    <string name="danfo">Danfo</string>
+    <string name="okada">Okada</string>
+    <string name="keke">Keke</string>
+    <string name="lagos_mainland">Lagos Mainland</string>
+    <string name="lagos_island">Lagos Island</string>
+    <string name="victoria_island">Victoria Island</string>
+    <string name="lekki">Lekki</string>
+    <string name="surulere">Surulere</string>
+    <string name="ikeja">Ikeja</string>
+    <string name="abuja">Abuja</string>
+    <string name="kano">Kano</string>
+    <string name="port_harcourt">Port Harcourt</string>
+    <string name="ibadan">Ibadan</string>
+    
+    <!-- Live Streaming -->
+    <string name="go_live">Go Live</string>
+    <string name="start_live">Start Live</string>
+    <string name="end_live">End Live</string>
+    <string name="live_viewers">viewers</string>
+    <string name="live_title_hint">What\'s your live about?</string>
+    <string name="live_chat_hint">Say something…</string>
+    <string name="send_gift">Send Gift</string>
+    <string name="gifts">Gifts</string>
+    <string name="coins">Coins</string>
+    <string name="buy_coins">Buy Coins</string>
+    
+    <!-- Creator Economy -->
+    <string name="monetization">Monetization</string>
+    <string name="creator_fund_title">Creator Fund</string>
+    <string name="creator_fund_description">Earn money from your content</string>
+    <string name="virtual_gifts_title">Virtual Gifts</string>
+    <string name="brand_partnerships">Brand Partnerships</string>
+    <string name="withdrawal">Withdrawal</string>
+    <string name="payment_methods">Payment Methods</string>
+    <string name="add_bank_account">Add Bank Account</string>
+    <string name="nigerian_naira">Nigerian Naira (₦)</string>
+    <string name="minimum_withdrawal">Minimum withdrawal: ₦1,000</string>
+    
+    <!-- Authentication -->
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="phone_number">Phone number</string>
+    <string name="verification_code">Verification code</string>
+    <string name="sign_in_google">Sign in with Google</string>
+    <string name="sign_in_phone">Sign in with phone</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="reset_password">Reset password</string>
+    <string name="create_account">Create account</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    
+    <!-- Default notification channel -->
+    <string name="default_notification_channel_id">naijachat_general</string>
+    <string name="default_notification_channel_name">General</string>
+    <string name="default_notification_channel_description">General notifications from NaijaChat</string>
+</resources>

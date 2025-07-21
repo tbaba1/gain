@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "256989905589",
+    "project_id": "naijachat",
+    "storage_bucket": "naijachat.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256989905589:android:d0fe13500f76e8eb95f4fc",
+        "android_client_info": {
+          "package_name": "com.naijachat.naija_chat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALt1T96zaWizl56_KTaTmMCYWyETs_Ehw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
