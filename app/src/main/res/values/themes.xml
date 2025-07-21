@@ -1,33 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Base.Theme.MyAndroidApp" parent="Theme.Material3.DayNight">
-        <item name="colorPrimary">@color/md_theme_light_primary</item>
-        <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
-        <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
-        <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
-        <item name="colorSecondary">@color/md_theme_light_secondary</item>
-        <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
-        <item name="colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
-        <item name="colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
-        <item name="colorTertiary">@color/md_theme_light_tertiary</item>
-        <item name="colorOnTertiary">@color/md_theme_light_onTertiary</item>
-        <item name="colorTertiaryContainer">@color/md_theme_light_tertiaryContainer</item>
-        <item name="colorOnTertiaryContainer">@color/md_theme_light_onTertiaryContainer</item>
-        <item name="colorError">@color/md_theme_light_error</item>
-        <item name="colorOnError">@color/md_theme_light_onError</item>
-        <item name="colorErrorContainer">@color/md_theme_light_errorContainer</item>
-        <item name="colorOnErrorContainer">@color/md_theme_light_onErrorContainer</item>
-        <item name="android:colorBackground">@color/md_theme_light_background</item>
-        <item name="colorOnBackground">@color/md_theme_light_onBackground</item>
-        <item name="colorSurface">@color/md_theme_light_surface</item>
-        <item name="colorOnSurface">@color/md_theme_light_onSurface</item>
-        <item name="colorSurfaceVariant">@color/md_theme_light_surfaceVariant</item>
-        <item name="colorOnSurfaceVariant">@color/md_theme_light_onSurfaceVariant</item>
-        <item name="colorOutline">@color/md_theme_light_outline</item>
-        <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
-        <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
-        <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
+    <!-- Base theme for 9jaChat -->
+    <style name="Base.Theme.NinejaChat" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary_pink</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primary_purple</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/primary_green</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondaryContainer">@color/nigeria_green</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+        
+        <!-- Tertiary colors -->
+        <item name="colorTertiary">@color/primary_yellow</item>
+        <item name="colorOnTertiary">@color/black</item>
+        <item name="colorTertiaryContainer">@color/afrobeats_orange</item>
+        <item name="colorOnTertiaryContainer">@color/white</item>
+        
+        <!-- Error colors -->
+        <item name="colorError">@color/error_red</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorErrorContainer">@color/error_red</item>
+        <item name="colorOnErrorContainer">@color/white</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/black</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorSurface">@color/dark_gray</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorSurfaceVariant">@color/medium_gray</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary_dark</item>
+        
+        <!-- Other colors -->
+        <item name="colorOutline">@color/border_dark</item>
+        <item name="colorOutlineVariant">@color/divider_dark</item>
+        
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+        <!-- Navigation bar -->
+        <item name="android:navigationBarColor">@color/black</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        
+        <!-- Window properties -->
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowActivityTransitions">true</item>
     </style>
 
-    <style name="Theme.MyAndroidApp" parent="Base.Theme.MyAndroidApp" />
+    <!-- Main app theme -->
+    <style name="Theme.NinejaChat" parent="Base.Theme.NinejaChat">
+        <!-- Custom attributes can be added here -->
+    </style>
+    
+    <!-- Theme without action bar -->
+    <style name="Theme.NinejaChat.NoActionBar" parent="Theme.NinejaChat">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    
+    <!-- Splash screen theme -->
+    <style name="Theme.NinejaChat.Splash" parent="Theme.NinejaChat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+    </style>
+    
+    <!-- Camera activity theme -->
+    <style name="Theme.NinejaChat.Camera" parent="Theme.NinejaChat.NoActionBar">
+        <item name="android:windowBackground">@color/camera_background</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowKeepScreenOn">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+    
+    <!-- Video player theme -->
+    <style name="Theme.NinejaChat.Player" parent="Theme.NinejaChat.NoActionBar">
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowKeepScreenOn">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+    </style>
+    
+    <!-- Button Styles -->
+    <style name="Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/button_primary</item>
+        <item name="android:textColor">@color/button_text_white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+    </style>
+    
+    <style name="Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/button_secondary</item>
+        <item name="android:textColor">@color/button_secondary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="cornerRadius">24dp</item>
+    </style>
+    
+    <style name="Button.Gradient" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/gradient_button_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="cornerRadius">24dp</item>
+    </style>
+    
+    <!-- Text Styles -->
+    <style name="Text.Headline" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:textColor">@color/text_primary_dark</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+    
+    <style name="Text.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/text_primary_dark</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    
+    <style name="Text.Body" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/text_primary_dark</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    
+    <style name="Text.Caption" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/text_secondary_dark</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    
+    <!-- Bottom Navigation Style -->
+    <style name="BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/bottom_nav_background</item>
+        <item name="itemIconTint">@color/bottom_nav_item_selector</item>
+        <item name="itemTextColor">@color/bottom_nav_item_selector</item>
+        <item name="itemIconSize">24dp</item>
+        <item name="itemPaddingTop">8dp</item>
+        <item name="itemPaddingBottom">8dp</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="menu">@menu/bottom_nav_menu</item>
+    </style>
+    
+    <!-- Video Action Button Styles -->
+    <style name="VideoActionButton">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/video_action_button_background</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+    
+    <!-- Record Button Style -->
+    <style name="RecordButton">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:background">@drawable/record_button_background</item>
+    </style>
+    
+    <!-- Profile Stats Style -->
+    <style name="ProfileStats">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <!-- Toolbar Style -->
+    <style name="Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="subtitleTextColor">@color/text_secondary_dark</item>
+        <item name="navigationIconTint">@color/white</item>
+    </style>
+    
+    <!-- Card Style -->
+    <style name="Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/card_background_dark</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+    
+    <!-- Input Field Style -->
+    <style name="InputField" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary_pink</item>
+        <item name="hintTextColor">@color/text_hint</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="boxBackgroundColor">@color/medium_gray</item>
+    </style>
 </resources>
