@@ -1,44 +1,26 @@
 {
   "project_info": {
-    "project_number": "123456789012",
-    "project_id": "nineja-chat",
-    "storage_bucket": "nineja-chat.appspot.com"
+    "project_number": "256989905589",
+    "project_id": "naijachat",
+    "storage_bucket": "naijachat.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:123456789012:android:abcdef123456789012345",
+        "mobilesdk_app_id": "1:256989905589:android:d0fe13500f76e8eb95f4fc",
         "android_client_info": {
-          "package_name": "com.nineja.chat"
+          "package_name": "com.naijachat.naija_chat"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "123456789012-abcdefghijklmnopqrstuvwxyz123456.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.nineja.chat",
-            "certificate_hash": "abcdef1234567890abcdef1234567890abcdef12"
-          }
-        },
-        {
-          "client_id": "123456789012-abcdefghijklmnopqrstuvwxyz123456.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAbCdEfGhIjKlMnOpQrStUvWxYz123456789"
+          "current_key": "AIzaSyALt1T96zaWizl56_KTaTmMCYWyETs_Ehw"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "123456789012-abcdefghijklmnopqrstuvwxyz123456.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

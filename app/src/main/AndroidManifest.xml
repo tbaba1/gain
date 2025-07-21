@@ -39,7 +39,7 @@
         android:required="false" />
 
     <application
-        android:name=".NineChatApplication"
+        android:name=".NaijaChatApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -47,7 +47,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Base.Theme.NinejaChat"
+        android:theme="@style/Base.Theme.NaijaChat"
         android:enableOnBackInvokedCallback="true"
         tools:targetApi="tiramisu">
 
@@ -55,7 +55,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.NinejaChat.NoActionBar"
+            android:theme="@style/Theme.NaijaChat.NoActionBar"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -68,7 +68,7 @@
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="false"
-            android:theme="@style/Theme.NinejaChat.Splash"
+            android:theme="@style/Theme.NaijaChat.Splash"
             android:screenOrientation="portrait"
             android:noHistory="true" />
 
@@ -76,7 +76,7 @@
         <activity
             android:name=".ui.camera.CameraActivity"
             android:exported="false"
-            android:theme="@style/Theme.NinejaChat.Camera"
+            android:theme="@style/Theme.NaijaChat.Camera"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
 
@@ -84,7 +84,7 @@
         <activity
             android:name=".ui.video.VideoPlayerActivity"
             android:exported="false"
-            android:theme="@style/Theme.NinejaChat.Player"
+            android:theme="@style/Theme.NaijaChat.Player"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
@@ -92,7 +92,7 @@
         <activity
             android:name=".ui.profile.ProfileDetailActivity"
             android:exported="false"
-            android:theme="@style/Theme.NinejaChat.NoActionBar"
+            android:theme="@style/Theme.NaijaChat.NoActionBar"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
@@ -100,7 +100,7 @@
         <activity
             android:name=".ui.settings.SettingsActivity"
             android:exported="false"
-            android:theme="@style/Theme.NinejaChat.NoActionBar"
+            android:theme="@style/Theme.NaijaChat.NoActionBar"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
@@ -108,7 +108,7 @@
         <activity
             android:name=".ui.live.LiveStreamActivity"
             android:exported="false"
-            android:theme="@style/Theme.NinejaChat.Player"
+            android:theme="@style/Theme.NaijaChat.Player"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"
             android:keepScreenOn="true" />
@@ -117,14 +117,14 @@
         <activity
             android:name=".ui.auth.AuthActivity"
             android:exported="false"
-            android:theme="@style/Theme.NinejaChat.NoActionBar"
+            android:theme="@style/Theme.NaijaChat.NoActionBar"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
         <!-- File Provider for sharing files -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.fileprovider"
+            android:authorities="com.naijachat.naija_chat.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

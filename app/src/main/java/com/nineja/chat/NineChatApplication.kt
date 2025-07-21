@@ -1,4 +1,4 @@
-package com.nineja.chat
+package com.naijachat.naija_chat
 
 import android.app.Application
 import android.util.Log
@@ -13,7 +13,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class NineChatApplication : Application() {
+class NaijaChatApplication : Application() {
 
     private lateinit var analytics: FirebaseAnalytics
     private lateinit var crashlytics: FirebaseCrashlytics
@@ -43,7 +43,7 @@ class NineChatApplication : Application() {
         // Set up global exception handler
         setupGlobalExceptionHandler()
         
-        Log.d(TAG, "9jaChat Application initialized successfully")
+        Log.d(TAG, "NaijaChat Application initialized successfully")
     }
 
     private fun initializeFirebase() {
@@ -109,7 +109,7 @@ class NineChatApplication : Application() {
                 "nigerian_content_boost" to 0.6f,
                 "maintenance_mode" to false,
                 "force_update_version" to "1.0.0",
-                "welcome_message" to "Welcome to 9jaChat! 🇳🇬",
+                "welcome_message" to "Welcome to NaijaChat! 🇳🇬",
                 "trending_hashtags" to "#Naija,#Afrobeats,#Comedy,#Lagos",
                 "supported_languages" to "en,yo,ig,ha"
             )
@@ -200,6 +200,6 @@ class NineChatApplication : Application() {
     fun getCrashlytics(): FirebaseCrashlytics = crashlytics
 
     companion object {
-        private const val TAG = "NineChatApplication"
+        private const val TAG = "NaijaChatApplication"
     }
 }
