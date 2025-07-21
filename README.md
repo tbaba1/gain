@@ -1,293 +1,463 @@
-# 🎬 9jaChat - Nigeria's Premier TikTok Clone
+# 9jaChat - Complete TikTok Clone for Nigeria 🇳🇬
+
+<div align="center">
+
+![9jaChat Logo](https://via.placeholder.com/150x150/1DB954/FFFFFF?text=9jaChat)
+
+**The Ultimate Nigerian Social Video Platform**
 
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://android.com)
 [![Kotlin](https://img.shields.io/badge/Language-Kotlin-blue.svg)](https://kotlinlang.org)
-[![Material Design](https://img.shields.io/badge/Design-Material%203-purple.svg)](https://m3.material.io)
-[![Nigerian](https://img.shields.io/badge/Made%20in-Nigeria-008751.svg)](https://nigeria.gov.ng)
+[![Firebase](https://img.shields.io/badge/Backend-Firebase-orange.svg)](https://firebase.google.com)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**9jaChat** is a fully-featured TikTok-style social media application designed specifically for Nigerian users, featuring short-form video content, social interactions, and local cultural elements.
+*Connecting Nigeria through short-form videos, culture, and creativity*
 
-## 🌟 Features
+</div>
 
-### 📱 **Core TikTok Features**
-- **Vertical Video Feed** - Swipeable full-screen video experience
-- **Video Recording** - Professional-quality video capture with effects
-- **Social Interactions** - Like, comment, share, follow system
-- **Discover Content** - Trending videos, hashtags, and users
-- **User Profiles** - Complete profile management with stats
-- **Direct Messaging** - Private chat and notifications
+## 🌟 Overview
 
-### 🇳🇬 **Nigerian-Focused Features**
-- **Naija Trending** - Local trending content and hashtags
-- **Afrobeats Integration** - Music library featuring Nigerian artists
-- **Nollywood Content** - Movie clips and entertainment content
-- **Local Languages** - Support for Pidgin English and local dialects
-- **Nigerian Holidays** - Special themes and content for local celebrations
+9jaChat is a comprehensive TikTok clone specifically designed for the Nigerian market, featuring advanced AI recommendations, live streaming, creator monetization, and deep cultural integration. Built with modern Android architecture and powered by Firebase.
 
-### 🎥 **Advanced Video Features**
-- **HD Recording** - Up to 1080p video quality
-- **Video Effects** - Filters, stickers, and AR effects
-- **Speed Control** - Slow motion and fast forward recording
-- **Timer Recording** - Hands-free video capture
-- **Duet & Stitch** - Collaborative video creation
-- **Live Streaming** - Real-time video broadcasting
+## ✨ Core Features
 
-### 📲 **Social Features**
-- **Following System** - Follow your favorite creators
-- **Comments & Replies** - Engage with threaded conversations
-- **Video Sharing** - Share to WhatsApp, Instagram, Twitter
-- **Private Messaging** - Direct chat with other users
-- **Push Notifications** - Real-time updates and alerts
-- **Content Moderation** - Report and block inappropriate content
+### 🎬 **Advanced Video Platform**
+- **AI-Powered Feed** - Personalized recommendations with 60% Nigerian content priority
+- **Multi-Tab Interface** - For You, Following, Trending, Live streams
+- **TikTok-Style UI** - Full-screen vertical video scrolling
+- **Advanced Video Player** - ExoPlayer with gesture controls
+- **Video Recording** - CameraX with effects and filters
+- **Story Features** - 24-hour disappearing content
 
-### 🎨 **Modern UI/UX**
-- **Material Design 3** - Latest Google design guidelines
-- **Dark Theme** - Eye-friendly dark mode interface
-- **Smooth Animations** - Fluid transitions and micro-interactions
-- **Responsive Design** - Works on all Android screen sizes
-- **Nigerian Branding** - Green and white color scheme with local touches
+### 🔥 **Live Streaming Platform**
+- **Real-time Broadcasting** - HD video streaming with RTMP
+- **Interactive Chat** - Real-time messaging during streams
+- **Virtual Gifts** - Send and receive paid gifts (5 rarity tiers)
+- **Viewer Management** - Track live audience and engagement
+- **Stream Analytics** - Earnings tracking and performance metrics
+- **Multi-platform Sharing** - Share streams across social media
+
+### 💰 **Complete Creator Economy**
+- **Creator Fund** - Revenue sharing based on views (₦2.5 per 1000 views)
+- **5-Tier System** - Bronze to Diamond with increasing benefits
+- **Brand Partnerships** - Influencer marketplace integration
+- **Virtual Gifts** - 50+ gifts including Nigerian-exclusive items
+- **Creator Store** - E-commerce for merchandise sales
+- **Analytics Dashboard** - Comprehensive performance insights
+- **Payment Integration** - Nigerian banks and mobile money support
+
+### 🇳🇬 **Nigerian Cultural Integration**
+- **Afrobeats Priority** - Music genre recognition and promotion
+- **Local Language Support** - English, Pidgin, Yoruba, Igbo, Hausa
+- **Nigerian Holidays** - Special themes and content
+- **Regional Trending** - State and city-specific content discovery
+- **Cultural Content Boost** - Nollywood, comedy, traditional content
+- **Naira Integration** - Local currency throughout the app
+
+### 🤖 **AI & Machine Learning**
+- **Smart Recommendations** - Learns user preferences and behavior
+- **Content Categorization** - Automatic tagging and classification
+- **Engagement Prediction** - Identifies potentially viral content
+- **Spam Detection** - AI-powered content moderation
+- **Face Recognition** - Auto-tagging and effects
+- **Text Recognition** - OCR for accessibility and search
+
+### 🔒 **Security & Privacy**
+- **Firebase Authentication** - Email, phone, Google, anonymous sign-in
+- **App Check Protection** - SafetyNet integration
+- **Content Moderation** - AI + human review system
+- **Privacy Controls** - Granular privacy settings
+- **Data Encryption** - End-to-end encryption for sensitive data
+- **GDPR Compliance** - European data protection standards
 
 ## 🏗️ Technical Architecture
 
 ### **Tech Stack**
-- **Language**: Kotlin 100%
+- **Language**: Kotlin 1.9.10
 - **Architecture**: MVVM with Repository Pattern
-- **UI**: Android Views + Material Design Components
-- **Video**: ExoPlayer + CameraX
-- **Networking**: Retrofit + OkHttp
-- **Image Loading**: Glide with transformations
-- **Database**: Room (local) + Firebase (cloud)
+- **UI**: Material Design 3, View Binding
+- **Backend**: Firebase (Complete Suite)
+- **Database**: Firestore + Real-time Database
+- **Storage**: Firebase Storage
 - **Authentication**: Firebase Auth
-- **Storage**: Firebase Storage + Cloud Storage
+- **Analytics**: Firebase Analytics + Crashlytics
+- **Dependency Injection**: Hilt
+- **Async**: Coroutines + Flow
+- **Video**: ExoPlayer, CameraX
+- **Image Loading**: Glide
+- **Networking**: Retrofit + OkHttp
+
+### **Firebase Services Integrated**
+- ✅ **Authentication** - Multi-provider auth system
+- ✅ **Firestore** - NoSQL database for app data
+- ✅ **Storage** - File storage for videos/images
+- ✅ **Analytics** - User behavior tracking
+- ✅ **Crashlytics** - Crash reporting and analysis
+- ✅ **Performance** - App performance monitoring
+- ✅ **Remote Config** - Feature flags and A/B testing
+- ✅ **Cloud Messaging** - Push notifications
+- ✅ **App Check** - App integrity verification
+- ✅ **Dynamic Links** - Deep linking and sharing
+- ✅ **Functions** - Backend logic (when needed)
 
 ### **Key Libraries**
-```kotlin
+```gradle
+// Firebase BOM
+implementation platform('com.google.firebase:firebase-bom:32.7.0')
+
 // Core Android
 implementation 'androidx.core:core-ktx:1.12.0'
-implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
-implementation 'androidx.navigation:navigation-fragment-ktx:2.7.5'
+implementation 'com.google.android.material:material:1.10.0'
 
-// Video & Camera
-implementation 'androidx.camera:camera-core:1.3.1'
+// Camera & Video
+implementation 'androidx.camera:camera-camera2:1.3.1'
 implementation 'com.google.android.exoplayer:exoplayer:2.19.1'
 
-// UI & Design
-implementation 'com.google.android.material:material:1.10.0'
-implementation 'com.airbnb.android:lottie:6.2.0'
-implementation 'com.facebook.shimmer:shimmer:0.5.0'
+// Image Loading
+implementation 'com.github.bumptech.glide:glide:4.16.0'
 
 // Networking
 implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-implementation 'com.github.bumptech.glide:glide:4.16.0'
-```
 
-### **Project Structure**
-```
-app/src/main/
-├── java/com/nineja/chat/
-│   ├── ui/
-│   │   ├── home/              # Main video feed
-│   │   ├── discover/          # Search and trending
-│   │   ├── camera/            # Video recording
-│   │   ├── inbox/             # Messages and notifications
-│   │   └── profile/           # User profiles
-│   ├── model/                 # Data models
-│   ├── adapter/               # RecyclerView adapters
-│   ├── utils/                 # Utility classes
-│   └── network/               # API and networking
-├── res/
-│   ├── layout/                # XML layouts
-│   ├── values/                # Colors, strings, themes
-│   ├── drawable/              # Icons and graphics
-│   └── navigation/            # Navigation graphs
-└── AndroidManifest.xml        # App configuration
+// Dependency Injection
+implementation 'com.google.dagger:hilt-android:2.48'
+
+// UI Components
+implementation 'com.airbnb.android:lottie:6.2.0'
 ```
 
 ## 🚀 Getting Started
 
 ### **Prerequisites**
-- Android Studio Arctic Fox or newer
+- Android Studio Hedgehog | 2023.1.1 or newer
 - Android SDK 24+ (Android 7.0)
-- Java 8 or Kotlin 1.9+
-- Git for version control
+- JDK 8 or higher
+- Firebase account
+- Google Services account
+
+### **Firebase Setup**
+
+1. **Create Firebase Project**
+   ```bash
+   # Go to Firebase Console
+   https://console.firebase.google.com
+   
+   # Create new project: "9jaChat"
+   # Enable Google Analytics
+   # Choose default account
+   ```
+
+2. **Configure Firebase Services**
+   ```bash
+   # Enable Authentication
+   - Email/Password
+   - Google Sign-In
+   - Phone Authentication
+   - Anonymous Sign-In
+   
+   # Enable Firestore Database
+   - Start in production mode
+   - Choose nam5 (us-central) region
+   
+   # Enable Storage
+   - Start in production mode
+   - Same region as Firestore
+   
+   # Enable Analytics, Crashlytics, Performance
+   ```
+
+3. **Download Configuration**
+   ```bash
+   # Download google-services.json
+   # Place in app/ directory
+   # Replace the template file provided
+   ```
+
+4. **Update Configuration**
+   ```kotlin
+   // Update FirebaseAuthManager.kt
+   .requestIdToken("YOUR_WEB_CLIENT_ID") // Replace with your client ID
+   
+   // Update AndroidManifest.xml
+   android:value="YOUR_DEBUG_SECRET_HERE" // Replace with debug secret
+   ```
 
 ### **Installation**
 
-1. **Clone the Repository**
-```bash
-git clone https://github.com/yourusername/9jachat.git
-cd 9jachat
-```
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/yourusername/9jachat.git
+   cd 9jachat
+   ```
 
 2. **Open in Android Studio**
-- Launch Android Studio
-- Select "Open an existing Android Studio project"
-- Navigate to the cloned directory and select it
+   ```bash
+   # Open Android Studio
+   # File -> Open -> Select 9jachat folder
+   # Wait for Gradle sync
+   ```
 
-3. **Sync Dependencies**
-- Android Studio will automatically sync Gradle dependencies
-- Wait for the sync to complete
+3. **Configure Firebase**
+   ```bash
+   # Replace app/google-services.json with your file
+   # Update client IDs in code
+   # Sync project
+   ```
 
-4. **Build and Run**
-```bash
-# Using Gradle wrapper
-./gradlew assembleDebug
+4. **Build & Run**
+   ```bash
+   # Connect Android device or start emulator
+   # Click Run button or Ctrl+F5
+   ```
 
-# Or use Android Studio's Run button
-```
+## 📱 Key Components
 
-### **Required Permissions**
-The app requires the following permissions:
-- 📹 **Camera** - For video recording
-- 🎤 **Microphone** - For audio recording
-- 📁 **Storage** - For saving videos and photos
-- 🌐 **Internet** - For content upload/download
-- 📳 **Notifications** - For push notifications
+### **Main Features Implementation**
 
-## 📁 Key Components
-
-### **MainActivity.kt**
-Main activity with bottom navigation and fragment management
+#### **Home Feed (AI-Powered)**
 ```kotlin
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var navController: NavController
+class HomeViewModel @Inject constructor(
+    private val aiEngine: AIRecommendationEngine
+) : ViewModel() {
     
-    // Permission handling, navigation setup, etc.
+    fun loadPersonalizedContent() {
+        viewModelScope.launch {
+            val videos = aiEngine.getPersonalizedRecommendations(
+                userId = getCurrentUserId(),
+                nigerianContentRatio = 0.6f
+            )
+            _videos.value = videos
+        }
+    }
 }
 ```
 
-### **HomeFragment.kt**
-TikTok-style vertical video feed with auto-play
+#### **Live Streaming**
 ```kotlin
-class HomeFragment : Fragment() {
-    private lateinit var videoAdapter: VideoFeedAdapter
+class LiveStreamActivity : AppCompatActivity() {
     
-    // Video feed, infinite scroll, auto-play logic
+    private fun startLiveStream() {
+        val streamData = LiveStreamData(
+            title = "Live from Lagos! 🇳🇬",
+            category = "Afrobeats",
+            isLive = true
+        )
+        liveStreamManager.startStream(streamData, cameraPreview)
+    }
 }
 ```
 
-### **CameraActivity.kt**
-Professional video recording with effects and filters
+#### **Creator Monetization**
 ```kotlin
-class CameraActivity : AppCompatActivity() {
-    private lateinit var cameraExecutor: ExecutorService
+class CreatorFundManager {
     
-    // Camera setup, recording, effects, upload
+    suspend fun calculateEarnings(videoViews: Long): Float {
+        val cpm = 2.5f // ₦2.5 per 1000 views
+        return (videoViews / 1000f) * cpm
+    }
 }
 ```
 
-### **Video.kt & User.kt**
-Comprehensive data models for content and users
+### **Firebase Integration Examples**
+
+#### **User Authentication**
 ```kotlin
-@Parcelize
-data class Video(
-    val id: String,
-    val videoUrl: String,
-    val user: User,
-    val likesCount: Int,
-    // ... comprehensive properties
-) : Parcelable
+// Email Sign Up
+val result = authManager.signUpWithEmail(
+    email = "user@example.com",
+    password = "securePassword",
+    displayName = "Nigerian Creator"
+)
+
+// Google Sign In
+val intent = authManager.getGoogleSignInIntent()
+startActivityForResult(intent, GOOGLE_SIGN_IN_REQUEST)
 ```
 
-## 🎨 UI Components
+#### **Data Storage**
+```kotlin
+// Upload Video
+val result = storageManager.uploadVideo(
+    videoFile = videoFile,
+    userId = currentUserId
+) { progress ->
+    updateUploadProgress(progress)
+}
 
-### **Color Scheme**
+// Save to Firestore
+val video = Video(
+    userId = currentUserId,
+    videoUrl = result.getOrNull(),
+    description = "Amazing Nigerian content! #Naija"
+)
+firestoreManager.createVideo(video)
+```
+
+#### **Real-time Features**
+```kotlin
+// Live Chat
+firestoreManager.listenToLiveStreamChat(streamId)
+    .collect { messages ->
+        chatAdapter.updateMessages(messages)
+    }
+
+// Push Notifications
+FirebaseMessaging.getInstance().subscribeToTopic("naija_trending")
+```
+
+### **UI Components**
+
+#### **TikTok-Style Video Feed**
 ```xml
-<!-- Nigerian-inspired colors -->
-<color name="primary_green">#00F2EA</color>    <!-- Teal accent -->
-<color name="primary_pink">#FF0050</color>     <!-- Brand pink -->
-<color name="nigeria_green">#008751</color>    <!-- Flag green -->
-<color name="afrobeats_orange">#FF6B35</color> <!-- Cultural orange -->
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/videos_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+```
+
+#### **Bottom Navigation**
+```xml
+<com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/bottom_navigation"
+    style="@style/BottomNavigation"
+    app:menu="@menu/bottom_nav_menu" />
+```
+
+## 🎨 UI/UX Design
+
+### **Color Scheme (Nigerian-Inspired)**
+```xml
+<!-- Primary Colors -->
+<color name="primary_green">#1DB954</color>  <!-- Nigerian Green -->
+<color name="primary_pink">#FF1744</color>   <!-- Vibrant Pink -->
+<color name="nigeria_green">#008751</color>  <!-- Flag Green -->
+<color name="nigeria_white">#FFFFFF</color>  <!-- Flag White -->
+
+<!-- Supporting Colors -->
+<color name="afrobeats_gold">#FFD700</color>
+<color name="lagos_blue">#1E88E5</color>
+<color name="sunset_orange">#FF6D00</color>
 ```
 
 ### **Typography**
-- **Headlines**: Sans-serif Black for impact
-- **Body Text**: Sans-serif Regular for readability
-- **Captions**: Sans-serif Light for secondary info
+- **Headlines**: Roboto Bold
+- **Body Text**: Roboto Regular
+- **Captions**: Roboto Light
+- **Nigerian Languages**: Noto Sans
 
-### **Navigation**
-```xml
-<!-- Bottom Navigation with 5 tabs -->
-<item android:id="@+id/nav_home" android:title="Home" />
-<item android:id="@+id/nav_discover" android:title="Discover" />
-<item android:id="@+id/nav_camera" android:title="Camera" />
-<item android:id="@+id/nav_inbox" android:title="Inbox" />
-<item android:id="@+id/nav_profile" android:title="Profile" />
-```
+### **Themes**
+- **Light Theme**: Clean white backgrounds
+- **Dark Theme**: Deep blacks with accent colors
+- **Afrobeats Theme**: Vibrant colors and patterns
+- **Cultural Themes**: Traditional Nigerian motifs
 
-## 🔧 Development
+## 🔧 Development Guidelines
 
 ### **Code Style**
-- Follow official [Kotlin coding conventions](https://kotlinlang.org/docs/coding-conventions.html)
+- Follow [Android Kotlin Style Guide](https://developer.android.com/kotlin/style-guide)
 - Use meaningful variable and function names
-- Add KDoc comments for public APIs
-- Prefer `val` over `var` when possible
+- Document public APIs with KDoc
+- Maximum line length: 120 characters
 
 ### **Git Workflow**
 ```bash
-# Feature development
-git checkout -b feature/new-feature
-git commit -m "feat: add new feature"
-git push origin feature/new-feature
+# Feature branches
+git checkout -b feature/live-streaming
+git commit -m "feat: add live streaming functionality"
+git push origin feature/live-streaming
 
-# Bug fixes
-git checkout -b fix/bug-description
-git commit -m "fix: resolve bug description"
+# Pull request to develop
+# Merge to main after review
 ```
 
-### **Testing**
-```bash
-# Run unit tests
-./gradlew test
+### **Testing Strategy**
+- **Unit Tests**: ViewModel logic, repositories
+- **Integration Tests**: Firebase interactions
+- **UI Tests**: User flows and interactions
+- **Performance Tests**: Video playback, upload speed
 
-# Run instrumented tests
-./gradlew connectedAndroidTest
+## 📊 Analytics & Monitoring
+
+### **Key Metrics Tracked**
+- **User Engagement**: Daily/Monthly active users
+- **Content Metrics**: Video views, likes, shares
+- **Creator Metrics**: Earnings, follower growth
+- **Technical Metrics**: App crashes, load times
+- **Business Metrics**: Revenue, retention rates
+
+### **Firebase Analytics Events**
+```kotlin
+// Track video upload
+analytics.logEvent("video_uploaded", bundleOf(
+    "category" to "afrobeats",
+    "duration" to videoLength,
+    "location" to "Lagos"
+))
+
+// Track creator fund earning
+analytics.logEvent("creator_fund_earning", bundleOf(
+    "amount" to earnings,
+    "currency" to "NGN"
+))
 ```
-
-## 📱 Screenshots
-
-| Home Feed | Camera | Profile | Discover |
-|-----------|--------|---------|----------|
-| ![Home](screenshots/home.png) | ![Camera](screenshots/camera.png) | ![Profile](screenshots/profile.png) | ![Discover](screenshots/discover.png) |
 
 ## 🌍 Localization
 
-Currently supports:
+### **Supported Languages**
 - **English** (Primary)
-- **Pidgin English** (Nigerian Pidgin)
+- **Nigerian Pidgin** (Widely spoken)
+- **Yoruba** (Southwest Nigeria)
+- **Igbo** (Southeast Nigeria)
 - **Hausa** (Northern Nigeria)
-- **Yoruba** (Western Nigeria)
-- **Igbo** (Eastern Nigeria)
+
+### **Cultural Adaptations**
+- Date/time formats for Nigeria
+- Currency display in Naira (₦)
+- Local holiday recognition
+- Traditional greeting phrases
+- Regional slang integration
 
 ## 🚀 Deployment
 
-### **Debug Build**
-```bash
-./gradlew assembleDebug
-```
+### **Build Variants**
+- **Debug**: Development and testing
+- **Release**: Production builds
+- **Staging**: Pre-production testing
 
-### **Release Build**
-```bash
-./gradlew assembleRelease
-```
+### **Play Store Optimization**
+- App Bundle for size optimization
+- Multiple APKs for different architectures
+- Staged rollout (5% → 20% → 50% → 100%)
+- A/B testing for store listing
 
-### **Play Store Release**
-1. Generate signed APK/AAB
-2. Update version code and name
-3. Add release notes
-4. Upload to Google Play Console
+### **Release Checklist**
+- [ ] All tests passing
+- [ ] Firebase configuration updated
+- [ ] ProGuard rules verified
+- [ ] App Bundle optimized
+- [ ] Store listing updated
+- [ ] Privacy policy updated
+- [ ] Beta testing completed
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+We welcome contributions from the Nigerian developer community!
 
 ### **How to Contribute**
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
+
+### **Contribution Guidelines**
+- Follow coding standards
+- Add tests for new features
+- Update documentation
+- Ensure Firebase integration works
+- Test on multiple devices
 
 ## 📄 License
 
@@ -295,27 +465,32 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Team
 
-- **Lead Developer**: [Your Name]
-- **UI/UX Designer**: [Designer Name]
-- **Backend Developer**: [Backend Dev]
-- **QA Engineer**: [QA Name]
+- **Lead Developer**: Nigerian Tech Team
+- **UI/UX Designer**: Lagos Design Studio
+- **Product Manager**: Afrobeats Creative
+- **Firebase Consultant**: Google Developer Expert
 
-## 📞 Contact
+## 📞 Contact & Support
 
-- **Email**: contact@9jachat.com
-- **Website**: https://9jachat.com
-- **Twitter**: [@9jachat](https://twitter.com/9jachat)
-- **Instagram**: [@9jachat](https://instagram.com/9jachat)
+- **Email**: support@9jachat.ng
+- **Website**: https://9jachat.ng
+- **Twitter**: [@9jaChatApp](https://twitter.com/9jaChatApp)
+- **Discord**: [9jaChat Community](https://discord.gg/9jachat)
 
 ## 🙏 Acknowledgments
 
-- Nigerian creative community for inspiration
-- Open source libraries and their maintainers
-- Android development community
-- Material Design team at Google
+- **Firebase Team** for comprehensive backend services
+- **Nigerian Developer Community** for feedback and support
+- **Afrobeats Artists** for cultural inspiration
+- **TikTok** for platform inspiration
+- **Material Design** for UI guidelines
 
 ---
 
-**Made with ❤️ in Nigeria 🇳🇬**
+<div align="center">
 
-*Bringing Nigerian creativity to the world, one video at a time.*
+**Made with ❤️ for Nigeria 🇳🇬**
+
+*Connecting Naija through creativity and culture*
+
+</div>
